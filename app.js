@@ -4,7 +4,7 @@ const app = express();
 
 const {Client} = require('pg');
 
-const bodyParser = require('body-parser')
+const path = require('path')
 
 const client = new Client({
     host: 'database-1.coen2gah75bx.us-east-1.rds.amazonaws.com',
@@ -27,32 +27,34 @@ client.query(`SELECT * FROM Public."words"`, (err, res) => {
     client.end();
 });
 
-app.use(bodyParser.json()); 
-
-app.use(bodyParser.urlencoded({ extended: true })); 
-
-app.set('view engine', 'ejs');
+app.use(express.static(__dirname));
 
 app.get("/", function (req, res) {
 
-    sentence = '';
-    console.log(a);
-    for(let i of a){
-        sentence = sentence + i.word +" ";
-    }
-    res.render('base',{title: "speed it" ,  data:sentence})
-  
+    res.sendFile(path.join(__dirname+'/index.html'));
 });
 
-<<<<<<< HEAD
-=======
->>>>>>> 249f5d915c2f54b1556f764c0064c6550dda4bfb
+
+app.get('/randomSentense' , (req,res)=>{
+    
+     res.json(getRandomSentense()); 
+ })
 
 app.listen(3000, function () {
   console.log("Server is running on localhost3000");
 });
 
 
-
+function getRandomSentense(){
+    var max = 20
+    var min = 2
+   
+    sentence = '';
+    for(let i=0; i<20; i++){
+        var randomIndex =  Math.floor(Math.random() * (max - min + 1)) + min;
+        sentence = sentence + a[randomIndex].word +" ";
+    }
+    return sentence;
+}
 
 
