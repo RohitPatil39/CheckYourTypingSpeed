@@ -79,7 +79,7 @@ function findwpm(){
 }
 
 async function getdata(){
-    const data = await fetch('http://localhost:3000/randomSentense')
+    const data = await fetch('http://44.202.218.56:3000/randomSentense')
     .then(response => response.json())
     return data;
 }
