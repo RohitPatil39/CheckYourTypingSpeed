@@ -16,7 +16,7 @@ const client = new Client({
 
 client.connect();
 
-var a;
+var a = [];
 
 client.query(`SELECT * FROM Public."words"`, (err, res) => {
     if (err) {
