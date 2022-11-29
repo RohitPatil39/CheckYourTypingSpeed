@@ -14,8 +14,6 @@ const client = new Client({
     database: 'TypingWords'
 });
 
-// check this puasdsh
-
 client.connect();
 
 var a = [];
@@ -46,7 +44,9 @@ app.get("/", function (req, res) {
   
 });
 
-
+<<<<<<< HEAD
+=======
+>>>>>>> 249f5d915c2f54b1556f764c0064c6550dda4bfb
 
 app.listen(3000, function () {
   console.log("Server is running on localhost3000");
