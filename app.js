@@ -14,6 +14,8 @@ const client = new Client({
     database: 'TypingWords'
 });
 
+// check this puasdsh
+
 client.connect();
 
 var a = [];
@@ -44,11 +46,6 @@ app.get("/", function (req, res) {
   
 });
 
-// app.post('/',function(req,res){
-//     console.log(req.body);
-    
-//     res.render('base',{title: "speed it" ,  data:req.body.inputString})
-// })
 
 
 app.listen(3000, function () {
