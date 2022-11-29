@@ -44,12 +44,6 @@ app.get("/", function (req, res) {
   
 });
 
-// app.post('/',function(req,res){
-//     console.log(req.body);
-    
-//     res.render('base',{title: "speed it" ,  data:req.body.inputString})
-// })
-
 
 app.listen(3000, function () {
   console.log("Server is running on localhost3000");
